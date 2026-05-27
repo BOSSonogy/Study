@@ -69,7 +69,6 @@ boys = 24
 girls = boys / 2
 boys_today = boys - 1
 girls_today = girls - 2
-total_children = boys + girls
 total_today = boys_today + girls_today
 print(f'Сьогодні в театральному гуртку {total_today} дітей')
 
