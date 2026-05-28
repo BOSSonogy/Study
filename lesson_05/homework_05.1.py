@@ -45,11 +45,8 @@ car_data = {
   'Nissan Titan': ('silver', 2018, 5.6, 'pickup', 35000)
 }
 search_criteria = (2017, 1.6, 36000)
-# (year>= , engine_volume >= , price<=)
 
-min_year = 2000
-min_engine = 1
-max_price = 100000
+min_year, min_engine, max_price = search_criteria
 
 for brand, data in car_data.items():
     color, year, engine_volume, body_type, price = data
