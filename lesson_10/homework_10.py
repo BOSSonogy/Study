@@ -59,74 +59,88 @@ class Figura(ABC):
 
 class Rhombus(Figura):
     def __init__(self, side_a, height_h):
-        self._side_a = side_a
-        self._height_h = height_h
+        self.__side_a = side_a
+        self.__height_h = height_h
 
     def area(self):
-        rhombus_area = self._side_a * self._height_h
-        print(f'Rhombus area = {rhombus_area}')
+        return self.__side_a * self.__height_h
+        #print(f'Rhombus area = {rhombus_area}')
 
     def perimetr(self):
-        rhombus_per = self._side_a * 4
-        print(f'Rhombus perimetr = {rhombus_per}')
+        return self.__side_a * 4
+        #print(f'Rhombus perimetr = {rhombus_per}')
 
 
 class Quadrangle(Figura):
     def __init__(self, side_a, side_b):
-        self._side_a = side_a
-        self._side_b = side_b
+        self.__side_a = side_a
+        self.__side_b = side_b
 
     def area(self):
-        quard_area = self._side_a * self._side_b
-        print(f'The area of quadrangle = {quard_area}')
+        return self.__side_a * self.__side_b
+        #print(f'The area of quadrangle = {quard_area}')
 
     def perimetr(self):
-        quard_per = (self._side_a + self._side_b) * 2
-        print(f'Quadrangle perimetr = {quard_per}')
+        return (self.__side_a + self.__side_b) * 2
+        #print(f'Quadrangle perimetr = {quard_per}')
 
 
 class Circle(Figura):
     def __init__(self, radius):
-        self._radius = radius
+        self.__radius = radius
 
     def area(self):
-        circle_area = pi * self._radius ** 2
-        print(f'Circle area = {circle_area}')
+        return pi * self.__radius ** 2
+        #print(f'Circle area = {circle_area}')
 
     def perimetr(self):
-        circle_per = 2 * pi * self._radius
-        print(f'Circle perimetr = {circle_per}')
+        return 2 * pi * self.__radius
+        #print(f'Circle perimetr = {circle_per}')
 
 
 class Triangle(Figura):
     def __init__(self, side_a, side_b, side_c):
-        self._side_a = side_a
-        self._side_b = side_b
-        self._side_c = side_c
+        self.__side_a = side_a
+        self.__side_b = side_b
+        self.__side_c = side_c
 
     def area(self):
         p = self.perimetr() / 2
-        area_by_gero = sqrt(p * (p - self._side_a) * (p - self._side_b) * (p - self._side_c))
-        print(f'Triangle area by Geron = {area_by_gero}')
+        return sqrt(p * (p - self.__side_a) * (p - self.__side_b) * (p - self.__side_c))
+        #print(f'Triangle area by Geron = {area_by_gero}')
 
     def perimetr(self):
-        tria_per = self._side_a + self._side_b + self._side_c
-        print(f'Triangle perimetr = {tria_per}')
-        return tria_per
+        return self.__side_a + self.__side_b + self.__side_c
+        #print(f'Triangle perimetr = {tria_per}')
 
-romb = Rhombus(5, 4)
-chotyrykutnyk = Quadrangle(6, 13)
-kolo = Circle(8)
-trykutnyk = Triangle(5, 6, 7)
 
-romb.area()
-romb.perimetr()
+figures = [
+    Rhombus(6, 4),
+    Quadrangle(8, 12),
+    Circle(7),
+    Triangle(7, 13, 16)
+]
 
-chotyrykutnyk.area()
-chotyrykutnyk.perimetr()
+for figure in figures:
+    print(f'Area = {figure.area()}')
+    print(f'Perimeter = {figure.perimetr()}')
+    print()
 
-kolo.area()
-kolo.perimetr()
 
-trykutnyk.area()
-trykutnyk.perimetr()
+
+# romb = Rhombus(5, 4)
+# chotyrykutnyk = Quadrangle(6, 13)
+# kolo = Circle(8)
+# trykutnyk = Triangle(5, 6, 7)
+#
+# romb.area()
+# romb.perimetr()
+#
+# chotyrykutnyk.area()
+# chotyrykutnyk.perimetr()
+#
+# kolo.area()
+# kolo.perimetr()
+#
+# trykutnyk.area()
+# trykutnyk.perimetr()
