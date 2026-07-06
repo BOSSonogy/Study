@@ -50,6 +50,7 @@ for json_file in JSON_DIR.glob("*.json"):
 print("Done.")
 print(f"Log_file: {LOG_FILE}")
 
+
 #Task 3
 
 XML_FILE = BASE_DIR / "ideas_for_test" / "work_with_xml" / "groups.xml"
@@ -57,7 +58,6 @@ XML_FILE = BASE_DIR / "ideas_for_test" / "work_with_xml" / "groups.xml"
 logger = logging.getLogger("xml_logger")
 logger.setLevel(logging.INFO)
 
-# Додаємо обробник тільки один раз
 if not logger.handlers:
     console = logging.StreamHandler()
     console.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
